@@ -28,6 +28,18 @@ def lcblock(lines, start, end):
     if start<=i<=end:
       print i, '\t', l.strip('\n')
     i=i+1
+def help():
+  print """usage: buf = []
+edit(buf) - edits
+save(buf) - prompts for filename
+buf = load() - prompts for filename
+lcode(buf) - prints lines with numbers
+lcpages(buf, step) - prints lines with
+  numbers, requires enter after step
+  lines.
+lcblock(buf, start, end) - prints a
+  certain block of lines from buf.
+"""
 def lcpages(lines, step):
   i=0
   j=step
@@ -36,12 +48,3 @@ def lcpages(lines, step):
     i=j+1
     j=j+step
     foo=raw_input()
-def help():
-  print "edit(list) - insert lines to list until \nline only contains '.'"
-  print "list = load() prompts for filename \nand loads lines to list"
-  print "save() saves a list named 'lines'"
-  print "lcode(list) prints line numbers and \nthe lines in a list"
-  print "lcblock(list, start, end) prints a \ncertain subsection of a list"
-  print "lcpages(list, step) prints the entire"
-  print "list, but pauses after step lines"
-
