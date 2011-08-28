@@ -9,3 +9,12 @@ you can do save(list) which prompts for filename
 or you can do list=load(), which prompts for 
 file to load.
 help() for more. Have fun.
+*update*
+made a class-version.
+from ced import ced
+ed=ced()
+ed.load() - prompts for filename
+ed.save() - prompts for filename
+ed.edit()
+ed.block(start, end) - displays a block from code
+ed.page(step) - displays the document in steps.
