@@ -36,15 +36,17 @@ buf = load() - prompts for filename
 lcode(buf) - prints lines with numbers
 lcpages(buf, step) - prints lines with
   numbers, requires enter after step
-  lines.
+  lines.p
 lcblock(buf, start, end) - prints a
   certain block of lines from buf.
 """
 def lcpages(lines, step):
   i=0
   j=step
-  while j<len(lines):
+  cmd = ""
+  
+  while (j+step<len(lines) and cmd != "q"):
     lcblock(lines, i, j)
     i=j+1
     j=j+step
-    foo=raw_input()
+    cmd=raw_input()
