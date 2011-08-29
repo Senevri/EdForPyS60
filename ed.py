@@ -44,9 +44,15 @@ def lcpages(lines, step):
   i=0
   j=step
   cmd = ""
-  
-  while (j+step<len(lines) and cmd != "q"):
+  while (cmd != "q"):
     lcblock(lines, i, j)
     i=j+1
     j=j+step
     cmd=raw_input()
+    if cmd == "b":
+      j=j-2*step
+      if j-step=>0:
+        i=j-step
+      else: 
+        i=0
+        j=step
