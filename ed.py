@@ -20,13 +20,13 @@ def save(lines):
 def lcode(lines):
   i=0
   for l in lines:
-    print i, '\t', l.strip('\n')
+    print repr(i).rjust(3), ':',l.strip('\n')
     i=i+1
 def lcblock(lines, start, end):
   i=0
   for l in lines:
     if start<=i<=end:
-      print i, '\t', l.strip('\n')
+      print repr(i).rjust(3), ':',l.strip('\n')
     i=i+1
 def help():
   print """usage: buf = []
@@ -51,7 +51,7 @@ def lcpages(lines, step):
     cmd=raw_input()
     if cmd == "b":
       j=j-2*step
-      if j-step=>0:
+      if (j-step)>=0:
         i=j-step
       else: 
         i=0

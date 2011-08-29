@@ -23,7 +23,7 @@ class ced:
     i=0
     j=step
     cmd = ""
-    while (j+step<len(self.buffer) and cmd != "q"):
+    while cmd != "q":
       self.block(i, j)
       i=j+1
       j=j+step
